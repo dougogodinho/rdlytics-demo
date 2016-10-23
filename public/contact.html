@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Contact us</title>
+    <script src="https://rawgit.com/estudiogenius/rdlytics-js/master/build/rdlytics.min.js"></script>
+    <script>
+        rdlytics.init();
+        function sendContact() {
+            var input = document.getElementById('email');
+            rdlytics.getUser().then(function () {
+                alert("Your contact was successfully registered!");
+            });
+        }
+    </script>
+</head>
+<body>
+<h1>Contact us</h1>
+<ul>
+    <li><a href="index.html">Home page</a></li>
+    <li><a href="about.html">About us</a></li>
+    <li><a href="contact.html">Contact us</a></li>
+</ul>
+
+<p> Aliquid aperiam corporis dignissimos, eum minima nam, officia porro quos recusandae repudiandae sint soluta tempora
+    tempore ullam vel? Accusamus excepturi incidunt magni.</p>
+<hr>
+<form>
+    <label for="email">Enter your email</label>
+    <input type="text" id="email" name="email">
+    <button type="button" onclick="sendContact()">Submit</button>
+</form>
+</body>
+</html>
