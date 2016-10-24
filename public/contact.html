@@ -8,7 +8,9 @@
         rdlytics.init();
         function sendContact() {
             var input = document.getElementById('email');
-            rdlytics.getUser().then(function () {
+            rdlytics.getUser().then(function (user) {
+                user.contact({email: input.value});
+                input.value = '';
                 alert("Your contact was successfully registered!");
             });
         }
@@ -25,10 +27,10 @@
 <p> Aliquid aperiam corporis dignissimos, eum minima nam, officia porro quos recusandae repudiandae sint soluta tempora
     tempore ullam vel? Accusamus excepturi incidunt magni.</p>
 <hr>
-<form>
+<form onsubmit="return false">
     <label for="email">Enter your email</label>
     <input type="text" id="email" name="email">
-    <button type="button" onclick="sendContact()">Submit</button>
+    <button type="submit" onclick="sendContact()">Submit</button>
 </form>
 </body>
 </html>
